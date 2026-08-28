@@ -13,3 +13,6 @@ __pycache__/
 *.swp
 .idea/
 .vscode/
+
+# regenerable locally via criterion_thesis_summary.py; not part of the repo
+analysis_out/thesis_caption.txt

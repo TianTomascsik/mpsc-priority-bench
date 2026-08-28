@@ -222,7 +222,6 @@ def plot_lines_by_size(
     y_label: str,
     file_name: str,
     use_log_x: bool = True,
-    use_log_y: bool = False,
 ) -> None:
     rows = [r for r in records if r.payload_size_bytes is not None and getattr(r, y_key) is not None]
     if not rows:
@@ -246,8 +245,6 @@ def plot_lines_by_size(
 
     if use_log_x:
         plt.xscale("log", base=2)
-    if use_log_y:
-        plt.yscale("log")
 
     plt.tight_layout()
     plt.savefig(out_dir / file_name, dpi=160)
@@ -569,7 +566,6 @@ def main() -> int:
                     y_label="GiB/s",
                     file_name=f"{fname_base}_bytes_gib_s_vs_size.png",
                     use_log_x=True,
-                    use_log_y=False,
                 )
             else:
                 plot_bar(
@@ -589,7 +585,6 @@ def main() -> int:
                     y_label="ops/s",
                     file_name=f"{fname_base}_ops_s_vs_size.png",
                     use_log_x=True,
-                    use_log_y=False,
                 )
                 plot_lines_by_size(
                     rs, plots_dir,
@@ -598,7 +593,6 @@ def main() -> int:
                     y_label="ns/op",
                     file_name=f"{fname_base}_latency_ns_per_op_vs_size.png",
                     use_log_x=True,
-                    use_log_y=False,
                 )
             else:
                 plot_bar(

@@ -5,14 +5,15 @@
 //! - `dual_priority` (HIGH/LOW): [`MutexBinaryHeapQueue`] vs [`DualSegQueue`]
 //! - `prio101` (101 bounded levels): [`SkiplistQueue`] vs [`BitmapQueue`]
 //!
-//! Items either move one machine word or reference a real payload slot in a
+//! Every benchmarked item references a real payload slot in a
 //! [`ProducerPool`] (producer writes, consumer touches one byte per cache
 //! line), so memory traffic scales with message size. See README.md for the
 //! study design, results, and their limits.
 //!
-//! An earlier no-payload-only variant of this crate is preserved in git
-//! history; the committed `analysis_out/records.csv` marks its rows with
-//! `has_payload_word=false`.
+//! The committed `analysis_out/records.csv` additionally contains rows marked
+//! `has_payload_word=false`, measured by an earlier no-payload variant of the
+//! benches (one machine word per item); that variant is preserved in git
+//! history and is not regenerable from the current benches.
 
 use crossbeam::queue::SegQueue;
 use crossbeam_skiplist::SkipMap;

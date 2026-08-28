@@ -9,10 +9,9 @@ use mpsc_priority_bench::{
 const BENCH_SIZES_STREAM: &[usize] = &[64, 512, 1472, 4096, 16384, 65536, 1048576, 4194304];
 const BENCH_SIZES_DGRAM: &[usize] = &[64, 512, 1472, 4096, 16384, 32768, 60000];
 
-/// Keep “work per iteration” roughly constant across payload sizes by targeting a fixed byte budget.
-/// This makes bytes/s comparisons more stable across sizes, and keeps runtime reasonable.
-///
-/// If you prefer constant message count per size, replace ops_for_size() with a fixed OPS_PER_ITER.
+// Keep "work per iteration" roughly constant across payload sizes by targeting
+// a fixed byte budget: bytes/s comparisons stay stable across sizes and the
+// total runtime stays reasonable.
 const TARGET_BYTES_PER_ITER: u64 = 64 * 1024 * 1024; // 64 MiB per Criterion "iteration"
 const MIN_OPS_PER_ITER: u64 = 256;
 const MAX_OPS_PER_ITER: u64 = 500_000;
@@ -28,9 +27,9 @@ fn configure_group(group: &mut criterion::BenchmarkGroup<'_, criterion::measurem
     group.measurement_time(Duration::from_secs(12));
 }
 
-/// -------------------------
-/// Dual priority: STREAM
-/// -------------------------
+// -------------------------
+// Dual priority: STREAM
+// -------------------------
 fn bench_dual_payload_stream_ops(c: &mut Criterion) {
     for &pkt_size in BENCH_SIZES_STREAM {
         let ops = ops_for_size(pkt_size);
@@ -101,9 +100,9 @@ fn bench_dual_payload_stream_bytes(c: &mut Criterion) {
     }
 }
 
-/// -------------------------
-/// Dual priority: DGRAM
-/// -------------------------
+// -------------------------
+// Dual priority: DGRAM
+// -------------------------
 fn bench_dual_payload_dgram_ops(c: &mut Criterion) {
     for &pkt_size in BENCH_SIZES_DGRAM {
         let ops = ops_for_size(pkt_size);
@@ -174,9 +173,9 @@ fn bench_dual_payload_dgram_bytes(c: &mut Criterion) {
     }
 }
 
-/// -------------------------
-/// Prio101: STREAM
-/// -------------------------
+// -------------------------
+// Prio101: STREAM
+// -------------------------
 fn bench_prio101_payload_stream_ops(c: &mut Criterion) {
     for &pkt_size in BENCH_SIZES_STREAM {
         let ops = ops_for_size(pkt_size);
@@ -247,9 +246,9 @@ fn bench_prio101_payload_stream_bytes(c: &mut Criterion) {
     }
 }
 
-/// -------------------------
-/// Prio101: DGRAM
-/// -------------------------
+// -------------------------
+// Prio101: DGRAM
+// -------------------------
 fn bench_prio101_payload_dgram_ops(c: &mut Criterion) {
     for &pkt_size in BENCH_SIZES_DGRAM {
         let ops = ops_for_size(pkt_size);

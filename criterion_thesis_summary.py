@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-Emit the thesis citation source for the priority-queue study.
+Emit a compact, citation-checked summary of the priority-queue study.
 
 Reads analysis_out/records.csv (produced by criterion_insights.py from the Criterion
-estimates) and writes analysis_out/thesis_caption.txt — a captions.txt-style block whose
-every number is computed from the CSV, so thesis prose citing the queue study passes the
-same citation-integrity check as the SESHAT figures.
+estimates) and writes analysis_out/thesis_caption.txt — a summary block in which
+every number is computed from the CSV, so any prose citing the study can be checked
+against the data mechanically.
 
 The study's two workloads each carry exactly one implementation pair:
   * dual_priority  — Impl1_MutexBinaryHeap vs Impl2_DualSegQueue (two classes, HIGH/LOW)
@@ -175,8 +175,8 @@ def main() -> None:
         "4-way ranking. Ratios = mean_ns(slower)/mean_ns(faster) per matched case (same "
         "group and parameter, both implementations measured); 95% confidence bounds come "
         "from Criterion's estimates. Cases without has_payload_word move one machine word "
-        "per item (the benches/mpsc_priority.rs 'VERSION WITHOUT REAL PAYLOAD SIZE' "
-        "variant) and isolate the queue discipline; payload cases copy real bytes per "
+        "per item (an earlier no-payload variant of the benches, preserved in git "
+        "history) and isolate the queue discipline; payload cases copy real bytes per "
         "item. This benchmarks the in-process queue primitive in isolation — NOT the "
         "end-to-end gateway QoS path — and informed the architectural decision to "
         "reserve workers per traffic class instead of queueing."
