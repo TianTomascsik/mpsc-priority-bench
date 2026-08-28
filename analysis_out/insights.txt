@@ -1,0 +1,116 @@
+Criterion insights summary
+==========================
+
+Total parsed records: 222
+
+Scenario: workload=dual_priority transport=n/a payload_word=False metric=Elements
+---------------------------------------------------------------------------------
+Implementation ranking (geometric mean):
+  - Impl2_DualSegQueue        score=1.207e+07  rel_to_best=1.000
+  - Impl1_MutexBinaryHeap     score=3.004e+06  rel_to_best=0.249
+
+Top-1 vs Top-2 speedup: Impl2_DualSegQueue / Impl1_MutexBinaryHeap = 4.017x
+
+Scenario: workload=dual_priority transport=DGRAM payload_word=False metric=Bytes
+--------------------------------------------------------------------------------
+Implementation ranking (geometric mean):
+  - Impl2_DualSegQueue        score=39.31  rel_to_best=1.000
+  - Impl1_MutexBinaryHeap     score=9.863  rel_to_best=0.251
+
+Top-1 vs Top-2 speedup: Impl2_DualSegQueue / Impl1_MutexBinaryHeap = 3.986x
+
+Scenario: workload=dual_priority transport=DGRAM payload_word=True metric=Bytes
+-------------------------------------------------------------------------------
+Implementation ranking (geometric mean):
+  - Impl2_DualSegQueue        score=8.321  rel_to_best=1.000
+  - Impl1_MutexBinaryHeap     score=2.64  rel_to_best=0.317
+
+Top-1 vs Top-2 speedup: Impl2_DualSegQueue / Impl1_MutexBinaryHeap = 3.152x
+
+Scenario: workload=dual_priority transport=DGRAM payload_word=True metric=Elements
+----------------------------------------------------------------------------------
+Implementation ranking (geometric mean):
+  - Impl2_DualSegQueue        score=2.56e+06  rel_to_best=1.000
+  - Impl1_MutexBinaryHeap     score=8.163e+05  rel_to_best=0.319
+
+Top-1 vs Top-2 speedup: Impl2_DualSegQueue / Impl1_MutexBinaryHeap = 3.137x
+
+Scenario: workload=dual_priority transport=STREAM payload_word=False metric=Bytes
+---------------------------------------------------------------------------------
+Implementation ranking (geometric mean):
+  - Impl2_DualSegQueue        score=148.6  rel_to_best=1.000
+  - Impl1_MutexBinaryHeap     score=36.67  rel_to_best=0.247
+
+Top-1 vs Top-2 speedup: Impl2_DualSegQueue / Impl1_MutexBinaryHeap = 4.051x
+
+Scenario: workload=dual_priority transport=STREAM payload_word=True metric=Bytes
+--------------------------------------------------------------------------------
+Implementation ranking (geometric mean):
+  - Impl2_DualSegQueue        score=8.877  rel_to_best=1.000
+  - Impl1_MutexBinaryHeap     score=3.304  rel_to_best=0.372
+
+Top-1 vs Top-2 speedup: Impl2_DualSegQueue / Impl1_MutexBinaryHeap = 2.687x
+
+Scenario: workload=dual_priority transport=STREAM payload_word=True metric=Elements
+-----------------------------------------------------------------------------------
+Implementation ranking (geometric mean):
+  - Impl2_DualSegQueue        score=7.275e+05  rel_to_best=1.000
+  - Impl1_MutexBinaryHeap     score=2.719e+05  rel_to_best=0.374
+
+Top-1 vs Top-2 speedup: Impl2_DualSegQueue / Impl1_MutexBinaryHeap = 2.676x
+
+Scenario: workload=prio101 transport=n/a payload_word=False metric=Elements
+---------------------------------------------------------------------------
+Implementation ranking (geometric mean):
+  - Impl4_BitmapScanner       score=2.564e+07  rel_to_best=1.000
+  - Impl3_Skiplist            score=2.981e+06  rel_to_best=0.116
+
+Top-1 vs Top-2 speedup: Impl4_BitmapScanner / Impl3_Skiplist = 8.601x
+
+Scenario: workload=prio101 transport=DGRAM payload_word=False metric=Bytes
+--------------------------------------------------------------------------
+Implementation ranking (geometric mean):
+  - Impl4_BitmapScanner       score=82.79  rel_to_best=1.000
+  - Impl3_Skiplist            score=9.743  rel_to_best=0.118
+
+Top-1 vs Top-2 speedup: Impl4_BitmapScanner / Impl3_Skiplist = 8.497x
+
+Scenario: workload=prio101 transport=DGRAM payload_word=True metric=Bytes
+-------------------------------------------------------------------------
+Implementation ranking (geometric mean):
+  - Impl4_BitmapScanner       score=5.607  rel_to_best=1.000
+  - Impl3_Skiplist            score=2.876  rel_to_best=0.513
+
+Top-1 vs Top-2 speedup: Impl4_BitmapScanner / Impl3_Skiplist = 1.950x
+
+Scenario: workload=prio101 transport=DGRAM payload_word=True metric=Elements
+----------------------------------------------------------------------------
+Implementation ranking (geometric mean):
+  - Impl4_BitmapScanner       score=1.7e+06  rel_to_best=1.000
+  - Impl3_Skiplist            score=8.777e+05  rel_to_best=0.516
+
+Top-1 vs Top-2 speedup: Impl4_BitmapScanner / Impl3_Skiplist = 1.937x
+
+Scenario: workload=prio101 transport=STREAM payload_word=False metric=Bytes
+---------------------------------------------------------------------------
+Implementation ranking (geometric mean):
+  - Impl4_BitmapScanner       score=315.5  rel_to_best=1.000
+  - Impl3_Skiplist            score=36.74  rel_to_best=0.116
+
+Top-1 vs Top-2 speedup: Impl4_BitmapScanner / Impl3_Skiplist = 8.588x
+
+Scenario: workload=prio101 transport=STREAM payload_word=True metric=Bytes
+--------------------------------------------------------------------------
+Implementation ranking (geometric mean):
+  - Impl4_BitmapScanner       score=4.327  rel_to_best=1.000
+  - Impl3_Skiplist            score=2.273  rel_to_best=0.525
+
+Top-1 vs Top-2 speedup: Impl4_BitmapScanner / Impl3_Skiplist = 1.903x
+
+Scenario: workload=prio101 transport=STREAM payload_word=True metric=Elements
+-----------------------------------------------------------------------------
+Implementation ranking (geometric mean):
+  - Impl4_BitmapScanner       score=5.651e+05  rel_to_best=1.000
+  - Impl3_Skiplist            score=3.24e+05  rel_to_best=0.573
+
+Top-1 vs Top-2 speedup: Impl4_BitmapScanner / Impl3_Skiplist = 1.744x

@@ -1,0 +1,15 @@
+/target
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+
+# Editor / local
+*.bak
+*.orig
+*~
+*.swp
+.idea/
+.vscode/

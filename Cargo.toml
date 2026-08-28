@@ -1,0 +1,23 @@
+[package]
+name = "mpsc_priority_bench"
+version = "0.1.0"
+edition = "2021"
+description = "Benchmark study of four dual-priority MPSC queue disciplines under 20:1 contention"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/TianTomascsik/mpsc-priority-bench"
+readme = "README.md"
+authors = ["Tian Tomascsik <tian.tomascsik@gmail.com>"]
+keywords = ["benchmark", "priority-queue", "mpsc", "lock-free", "concurrency"]
+categories = ["concurrency"]
+publish = false
+
+[dependencies]
+crossbeam = "0.8.4"
+crossbeam-skiplist = "0.1.3"
+
+[dev-dependencies]
+criterion = "0.8.1"
+
+[[bench]]
+name = "mpsc_priority"
+harness = false
