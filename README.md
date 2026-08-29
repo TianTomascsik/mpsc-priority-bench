@@ -56,11 +56,11 @@ cargo bench         # the Criterion study (long; writes target/criterion/)
 python3 criterion_insights.py
 
 # Emit the citation-checked summary block (stdlib-only)
-python3 criterion_thesis_summary.py
+python3 criterion_caption.py
 ```
 
 `criterion_insights.py` requires **Python 3 + matplotlib**;
-`criterion_thesis_summary.py` is stdlib-only.
+`criterion_caption.py` is stdlib-only.
 
 Note that `cargo bench` reproduces only the payload-mode rows
 (`has_payload_word=true`); the committed no-payload rows come from the earlier

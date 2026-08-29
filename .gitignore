@@ -14,5 +14,5 @@ __pycache__/
 .idea/
 .vscode/
 
-# regenerable locally via criterion_thesis_summary.py; not part of the repo
-analysis_out/thesis_caption.txt
+# regenerable locally via criterion_caption.py; not part of the repo
+analysis_out/caption.txt

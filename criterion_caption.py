@@ -3,7 +3,7 @@
 Emit a compact, citation-checked summary of the priority-queue study.
 
 Reads analysis_out/records.csv (produced by criterion_insights.py from the Criterion
-estimates) and writes analysis_out/thesis_caption.txt — a summary block in which
+estimates) and writes analysis_out/caption.txt — a summary block in which
 every number is computed from the CSV, so any prose citing the study can be checked
 against the data mechanically.
 
@@ -27,7 +27,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 RECORDS = HERE / "analysis_out" / "records.csv"
-OUT = HERE / "analysis_out" / "thesis_caption.txt"
+OUT = HERE / "analysis_out" / "caption.txt"
 
 PAIRS = {
     "dual_priority": ("Impl2_DualSegQueue", "Impl1_MutexBinaryHeap",
@@ -181,7 +181,7 @@ def main() -> None:
         "end-to-end gateway QoS path — and informed the architectural decision to "
         "reserve workers per traffic class instead of queueing."
     )
-    provenance = f"source: analysis_out/records.csv · {n} records · emitted by criterion_thesis_summary.py"
+    provenance = f"source: analysis_out/records.csv · {n} records · emitted by criterion_caption.py"
 
     lines = [
         "QSTUDY  mpsc_priority_bench queue study",
